@@ -44,7 +44,7 @@ def print_tic_tac_toe(tic_tac_toe):
         start_tic_tac_toe()
 
     elif tic_tac_toe[0][1] == tic_tac_toe[1][1] == tic_tac_toe[2][1] and tic_tac_toe[0][1] != "":
-        print(tic_tac_toe[0][0], "won the match")
+        print(tic_tac_toe[0][1], "won the match")
         time.sleep(2)
         os.system('cls' if os.name == 'nt' else 'clear')
         start_tic_tac_toe()
@@ -76,13 +76,12 @@ def start_tic_tac_toe():
                    ["", "", ""]]
 
     game_is_start = True
+    user_response = input("For start The game Please enter any key or press q for quit: ").lower()
+    if user_response == 'q':
+        game_is_start = False
     while game_is_start:
         os.system('cls' if os.name == 'nt' else 'clear')
         print(welcome)
-        user_response = input("For start The game Please enter any key or press q for quit").lower()
-        if user_response == 'q':
-            game_is_start = False
-
         for i in range(1, 10):
             if i % 2 != 0:
                 player = player_x
